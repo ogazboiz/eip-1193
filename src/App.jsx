@@ -15,7 +15,7 @@ function App() {
         <Eip1193 />
       </div>
 
-      {/* Footer */}
+     
       <footer className="mt-8 text-gray-500 text-sm">
         Made by <span className="font-semibold">Ogazboiz</span>
       </footer>
