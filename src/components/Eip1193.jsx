@@ -80,13 +80,28 @@ const Eip1193 = () => {
     }
   }
 
-  const disconnect = () => {
+  const disconnect = async () => {
     if (!provider) return
+
+    try {
+      await provider.request({
+        method: "wallet_revokePermissions",
+        params: [
+          {
+            eth_accounts: {}
+          },
+        ],
+      })
+      console.log("disconnected.😞 ")
+    } catch (error) {
+      console.error("error revoking permisssion:", error)
+    }
+
     provider.removeListener("accountsChanged", changeAccount)
     provider.removeListener("chainChanged", changeChainId)
     setConnected(false)
     setAccount("")
-    console.log("Disconnected. Please disconnect manually from MetaMask.")
+    
   }
 
   const switchChain = async (targetChainId) => {
