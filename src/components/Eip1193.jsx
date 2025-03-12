@@ -1,9 +1,9 @@
-"use client"
+
 
 import { useState, useEffect } from "react"
 import { Link, UserPlus, Send, LogOut, ChevronRight } from "lucide-react"
 
-const Eip1993 = () => {
+const Eip1193 = () => {
   const [provider, setProvider] = useState(null)
   const [connected, setConnected] = useState(false)
   const [account, setAccount] = useState("")
@@ -71,7 +71,7 @@ const Eip1993 = () => {
           {
             from: account,
             to: "0x2E15bB8aDF3438F66A6F786679B0bBBBF02A75d5",
-            value: "0x38d7ea4c68000", // 0.001 ETH
+            value: "0x38d7ea4c68000", 
           },
         ],
       })
@@ -181,7 +181,6 @@ const Eip1993 = () => {
     return "Unknown Chain"
   }
 
-  // Truncate address for display
   const truncateAddress = (address) => {
     if (!address) return ""
     return `${address.slice(0, 6)}...${address.slice(-4)}`
@@ -269,5 +268,4 @@ const Eip1993 = () => {
   )
 }
 
-export default Eip1993
-
+export default Eip1193
